@@ -7,7 +7,7 @@ export default defineConfig({
   reporter: [['html', { open: 'never' }]],
 
   projects: [
-    // 1) مشروع Setup: يشغّل فقط ملفات .setup.ts ويولّد storageState
+    // login setup - runs once to authenticate and save storage state 
     {
       name: 'setup',
       testMatch: /.*\.setup\.ts/,
@@ -17,7 +17,7 @@ export default defineConfig({
         baseURL: 'https://www.saucedemo.com',
       },
     },
-    // 2) Chromium
+
     {
       name: 'chromium',
       testIgnore: ['tests/api/**'],
@@ -25,13 +25,14 @@ export default defineConfig({
         ...devices['Desktop Chrome'],
         baseURL: 'https://www.saucedemo.com',
         trace: 'on-first-retry',
+        screenshot: 'only-on-failure',
+        video: 'retain-on-failure',
         testIdAttribute: 'data-test',
         storageState: '.auth/standard.json',
       },
       dependencies: ['setup'],
     },
 
-    // 3) Firefox
     {
       name: 'firefox',
       testIgnore: ['tests/api/**'],
@@ -39,13 +40,14 @@ export default defineConfig({
         ...devices['Desktop Firefox'],
         baseURL: 'https://www.saucedemo.com',
         trace: 'on-first-retry',
+        screenshot: 'only-on-failure',
+        video: 'retain-on-failure',
         testIdAttribute: 'data-test',
         storageState: '.auth/standard.json',
       },
       dependencies: ['setup'],
     },
 
-    // 4) WebKit (Safari-like)
     {
       name: 'webkit',
       testIgnore: ['tests/api/**'],
@@ -53,13 +55,15 @@ export default defineConfig({
         ...devices['Desktop Safari'],
         baseURL: 'https://www.saucedemo.com',
         trace: 'on-first-retry',
+        screenshot: 'only-on-failure',
+        video: 'retain-on-failure',
         testIdAttribute: 'data-test',
         storageState: '.auth/standard.json',
       },
       dependencies: ['setup'],
     },
 
-    // 5) API Testing
+    // API Testing
     {
       name: 'api',
       testDir: './tests/api',
