@@ -1,3 +1,5 @@
+[![Playwright Tests](https://github.com/jobouri97/playwright-clean-framework/actions/workflows/playwright.yml/badge.svg)](https://github.com/jobouri97/playwright-clean-framework/actions/workflows/playwright.yml)
+
 # Playwright Clean API Framework
 
 A clean and scalable Playwright API automation framework built with TypeScript and strong type safety.
