@@ -26,22 +26,28 @@ A clean and scalable Playwright API automation framework built with TypeScript a
 ---
 
 ## 📂 Project Structure
-src/
-├── api/
-│ ├── clients/
-│ ├── models/
-│ └── fixtures/
-├── pages/
-├── test-data/
-├── utils/
-tests/
-├── api/
-├── e2e/
-├── smoke/
-└── setup/
-playwright.config.ts
-tsconfig.json
+## 📂 Project Structure
 
+```text
+.
+├── src/
+│   ├── api/
+│   │   ├── clients/
+│   │   ├── models/
+│   │   └── fixtures/
+│   ├── pages/
+│   ├── test-data/
+│   └── utils/
+│
+├── tests/
+│   ├── api/
+│   ├── e2e/
+│   ├── smoke/
+│   └── setup/
+│
+├── playwright.config.ts
+└── tsconfig.json
+```
 
 ---
 
