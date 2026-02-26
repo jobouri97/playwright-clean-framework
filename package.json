@@ -1,0 +1,19 @@
+{
+  "name": "playwright-clean-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "api:test": "playwright test --project=api",
+    "ui:test": "playwright test --project=chromium"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.3.0",
+    "tsconfig-paths": "^4.2.0"
+  }
+}
